@@ -157,6 +157,7 @@ let
 
     NP_CONF_SANDBOX=\''${NP_CONF_SANDBOX:-false}
     NP_CONF_STORE=\''${NP_CONF_STORE:-auto}
+    NP_SUB=\''${NP_SUB:-https://cache.nixos.org}
 
 
     recreate_nix_conf(){
@@ -173,6 +174,7 @@ let
       # configurable config
       echo "sandbox = \$NP_CONF_SANDBOX" >> \$dir/conf/nix.conf
       echo "store = \$NP_CONF_STORE" >> \$dir/conf/nix.conf
+      echo "substituters = \$NP_SUB" >> \$dir/conf/nix.conf
     }
 
 
